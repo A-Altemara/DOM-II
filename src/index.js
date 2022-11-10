@@ -7,12 +7,12 @@ import './less/index.less'
  * 2.sign me up to open a pop up message
  * 3.escape key to close the pop up message
  * 5.unload pop up message are you sure you want to leave message
- * 6.increment a counter on click
  * 7.rightclick to view menu
- * 8.hover to show instructions
- * 9.
- * 10. 
+ * 9.mouse out of section adds it back
  * 
+ * 10. 
+ * 8.hover to show instructions
+ * 6.message in console on click
  * 4.onload randomly choose the background color
  */
 
@@ -67,8 +67,23 @@ divCounter.append(counter)
 const foot = document.querySelector('footer')
 foot.append(divCounter)
 
-counter.onClick = function () {
-    let count = 0
-    
-}
+counter.addEventListener("click", function(evt){
+    console.log('you have clicked')
+})
 
+const destination = document.querySelector('.content-destination')
+const comment = document.createElement('p')
+destination.append(comment)
+comment.innerText = "This is Boaty McBoat"
+comment.style.display = 'none'
+destination.addEventListener('mouseover', function(evt){
+    comment.style.display = 'block'
+})
+
+
+// comment.innerText = "This is Boaty McBoat"
+// comment.classList.add('hidden')
+// hidden.style.display = 'none'
+// destination.addEventListener('mouseover', function(evt){
+//     comment.toggle('hidden')
+// })
