@@ -3,7 +3,7 @@ import './less/index.less'
 // Your code goes here!
 // 10 things it should do:
 /**
- * 1.resize over the bus and make the bus picture bigger
+ * 
  * 2.sign me up to open a pop up message
  * 3.escape key to close the pop up message
  * 5.unload pop up message are you sure you want to leave message
@@ -11,6 +11,8 @@ import './less/index.less'
  * 9.mouse out of section adds it back
  * 
  * 10. 
+ * 
+ * 1.resize over the bus and make the bus picture bigger
  * 8.hover to show instructions
  * 6.message in console on click
  * 4.onload randomly choose the background color
@@ -72,6 +74,8 @@ counter.addEventListener("click", function(evt){
 })
 
 const destination = document.querySelector('.content-destination')
+const pick = document.querySelector('.content-pick')
+const content = document.querySelector('.inverse-content')
 const comment = document.createElement('p')
 destination.append(comment)
 comment.innerText = "This is Boaty McBoat"
@@ -79,11 +83,25 @@ comment.style.display = 'none'
 destination.addEventListener('mouseover', function(evt){
     comment.style.display = 'block'
 })
+pick.addEventListener('mouseover', function(evt){
+    comment.style.display = 'none'
+})
+content.addEventListener('mouseover', function(evt){
+    comment.style.display = 'none'
+})
 
 
+// Tired this and the toggle didn't work
 // comment.innerText = "This is Boaty McBoat"
 // comment.classList.add('hidden')
 // hidden.style.display = 'none'
 // destination.addEventListener('mouseover', function(evt){
 //     comment.toggle('hidden')
 // })
+
+const headPic = document.querySelector('.intro img')
+console.log(headPic)
+headPic.classList.add("newWidth")
+headPic.addEventListener('mousedown', function(){
+    console.log("the mousedown hase registered")
+})
