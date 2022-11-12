@@ -3,17 +3,18 @@ import './less/index.less'
 // Your code goes here!
 // 10 things it should do:
 /**
- * 
- * 2.sign me up to open a pop up message
- * 3.escape key to close the pop up message
- * 5.unload pop up message are you sure you want to leave message
- * 7.rightclick to view menu
- * 9.mouse out of section adds it back
- * 
  * 10. 
+ * 2.sign me up to open a pop up message
+ * 7.rightclick to view menu
  * 
- * 1.resize over the bus and make the bus picture bigger
- * 8.hover to show instructions
+ * 3.escape key to close the pop up message(written but not working)
+ * 1.resize over the bus and make the bus picture bigger (currently a mouse down message in console)
+ * 
+ * 5.unload pop up message are you sure you want to leave message(written maybe working needs a message to escape from to test)
+ * 
+ * 
+ * 9.mouse out of section adds it back
+ * 8.hover to show name
  * 6.message in console on click
  * 4.onload randomly choose the background color
  */
@@ -54,10 +55,20 @@ modal.appendChild(noButton)
 const head = document.querySelector('header')
 head.append(modal)
 
+const signUpModal = document.createElement('div')
+const signUpBut = document.querySelector(".destination .btn")
+signUpBut.append(signUpModal)
+signUpModal.append(modal)
+signUpBut.addEventListener('click', (evt) =>{
+    modal.classList.remove('off')
+    modal.style.display = 'block'
+})
+
 
 function escKey(event) {
     if(event.key === "Escape"){
         modal.classList.add("off");
+        modal.style.display ="none"
     }
 }
 document.addEventListener("keydown", escKey);
@@ -89,8 +100,6 @@ pick.addEventListener('mouseover', function(evt){
 content.addEventListener('mouseover', function(evt){
     comment.style.display = 'none'
 })
-
-
 // Tired this and the toggle didn't work
 // comment.innerText = "This is Boaty McBoat"
 // comment.classList.add('hidden')
@@ -105,3 +114,4 @@ headPic.classList.add("newWidth")
 headPic.addEventListener('mousedown', function(){
     console.log("the mousedown hase registered")
 })
+
