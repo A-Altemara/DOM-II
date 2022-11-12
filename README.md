@@ -28,11 +28,11 @@ Do not **move or rename any files** in this project. The website's source files 
 
 * [ ] Here are some event types you could try to use:
   * [X] `mouseover`
-  * [ ] `keydown`
+  * [X] `keydown`
   * [ ] `wheel`
-  * [ ] `load`
+  * [X] `load`
   * [ ] `focus`
-  * [ ] `resize`
+  * [X] `resize`
   * [ ] `scroll`
   * [ ] `select`
   * [ ] `dblclick`

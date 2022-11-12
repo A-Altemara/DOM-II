@@ -4,15 +4,12 @@ import './less/index.less'
 // 10 things it should do:
 /**
  * 10. 
- * 2.sign me up to open a pop up message
  * 7.rightclick to view menu
- * 
- * 3.escape key to close the pop up message(written but not working)
+ *  
  * 1.resize over the bus and make the bus picture bigger (currently a mouse down message in console)
- * 
  * 5.unload pop up message are you sure you want to leave message(written maybe working needs a message to escape from to test)
- * 
- * 
+ * 3.escape key to close the pop up message
+ * 2.sign me up to open a pop up message
  * 9.mouse out of section adds it back
  * 8.hover to show name
  * 6.message in console on click
@@ -45,7 +42,7 @@ const modalPara = document.createElement('p')
 modalPara.innerText = "Are you Sure"
 console.log(modal)
 modal.appendChild(modalPara)
-// need to add the modal to the page and make it hidden but it broke the page when I tried to add it to the body?
+// need to add the modal to the page so it tiggers on unload and make it hidden but it broke the page when I tried to add it to the body?
 const yesButton = document.createElement('button')
 const noButton = document.createElement('button')
 yesButton.innerText = 'Yes'
@@ -55,6 +52,12 @@ modal.appendChild(noButton)
 const head = document.querySelector('header')
 head.append(modal)
 
+modal.addEventListener('beforunload',(event) => {
+    modal.style.display = 'block'
+    event.preventDefault()
+})
+
+// sign up modal for sign up button at the bottom, need to add to other 2
 const signUpModal = document.createElement('div')
 const signUpBut = document.querySelector(".destination .btn")
 signUpBut.append(signUpModal)
@@ -64,7 +67,7 @@ signUpBut.addEventListener('click', (evt) =>{
     modal.style.display = 'block'
 })
 
-
+// escape key from modals
 function escKey(event) {
     if(event.key === "Escape"){
         modal.classList.add("off");
@@ -73,6 +76,7 @@ function escKey(event) {
 }
 document.addEventListener("keydown", escKey);
 
+// adding counter in console to counter at footer
 const divCounter = document.createElement('div')
 const counter = document.createElement('button')
 counter.innerText = 'Add 1 to the Count'
@@ -84,6 +88,7 @@ counter.addEventListener("click", function(evt){
     console.log('you have clicked')
 })
 
+// Name of boaty showing on hove over section
 const destination = document.querySelector('.content-destination')
 const pick = document.querySelector('.content-pick')
 const content = document.querySelector('.inverse-content')
@@ -108,6 +113,7 @@ content.addEventListener('mouseover', function(evt){
 //     comment.toggle('hidden')
 // })
 
+// mouse down on bus picture
 const headPic = document.querySelector('.intro img')
 console.log(headPic)
 headPic.classList.add("newWidth")
