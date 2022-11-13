@@ -3,9 +3,9 @@ import './less/index.less'
 // Your code goes here!
 // 10 things it should do:
 /**
- * 10. 
  * 7.rightclick to view menu
  *  
+ * 10. double click for random coordaintes 
  * 1.resize over the bus and make the bus picture bigger (currently a mouse down message in console)
  * 5.unload pop up message are you sure you want to leave message(written maybe working needs a message to escape from to test)
  * 3.escape key to close the pop up message
@@ -121,3 +121,14 @@ headPic.addEventListener('mousedown', function(){
     console.log("the mousedown hase registered")
 })
 
+
+// Random location generator on doubleclick
+const genLocat = document.querySelector(".text-content h2")
+genLocat.addEventListener('dblclick', ()=>{
+    console.log('youve clicked')
+    const link = document.createElement('a')
+    link.innerText = "click me"
+    link.setAttribute('href', 'https://perchance.org/geographic-location')
+    link.setAttribute('target', "_blank")
+    genLocat.append(link)
+})
