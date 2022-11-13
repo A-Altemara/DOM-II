@@ -3,7 +3,7 @@ import './less/index.less'
 // Your code goes here!
 // 10 things it should do:
 /**
- * 7.rightclick to view menu
+ * 7.F9 update
  *  
  * 10. double click for random coordaintes 
  * 1.resize over the bus and make the bus picture bigger (currently a mouse down message in console)
