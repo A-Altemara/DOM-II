@@ -16,6 +16,15 @@ import './less/index.less'
  * 4.onload randomly choose the background color
  */
 
+ const head = document.querySelector('header')
+document.addEventListener('keydown', (evt) => {
+    console.log(evt.key)
+
+    if (evt.key === "F9"){
+    console.log('you have selected F9')
+    }
+})
+
 
 function ran (number) {
     return Math.floor(Math.random() * (number+1));
@@ -49,7 +58,7 @@ yesButton.innerText = 'Yes'
 noButton.innerText = 'No'
 modal.appendChild(yesButton)
 modal.appendChild(noButton)
-const head = document.querySelector('header')
+
 head.append(modal)
 
 modal.addEventListener('beforunload',(event) => {
